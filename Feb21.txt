@@ -1,2 +1,18 @@
 if(( $avg > 50 )) works but (( $avg -gt 50 )) doesn't  !!!
 so for (( $avg > 50 )) is equivalent to [ $avg -gt 50 ]
+name="Nevzhynska"
+sudo touch $(seq -f "Nevzhynska-%03g.txt" 1 25)
+currentfolder=$HOME/perscholas/learnbash
+fileName="jyothi"
+echo $currentfolder
+cd $currentfolder
+ls | grep "jyothi" | awk '{print substr($0,7)}'
+numbers=($(ls | grep "jyothi" | awk '{print substr($0,7)}'))
+maxNum=${#numbers[@]}
+echo $maxNum
+
+if [ $maxNum == 0 ]; then
+    for (( i=1 ; i<26 ; i++ )); do
+        echo $i
+    done
+fi
